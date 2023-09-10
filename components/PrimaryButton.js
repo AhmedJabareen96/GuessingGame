@@ -1,19 +1,19 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
 
-function PrimaryButton(props) {
+function PrimaryButton({children, onPress}) {
 
-const pressButtonHandler = () => {
-    console.log("Pressed!")
-}
 
 // To enable effect on ios
 // <Pressable style={({pressed}) => {pressed ? [styles.containerInner, styles.pressed] : styles.containerInner} } onPress={pressButtonHandler} android_ripple={{color: "#640233"}}></Pressable>
-  
+let onPressHandler  = () => {
+    onPress()
+}
+
 return (
     <View style={styles.containerOutter}>
-    <Pressable style={styles.containerInner} onPress={pressButtonHandler} android_ripple={{color: "#640233"}}>
-        <Text style={styles.buttonText}>{props.children}</Text>
+    <Pressable style={styles.containerInner} onPress={onPressHandler} android_ripple={{color: "#640233"}}>
+        <Text style={styles.buttonText}>{children}</Text>
     </Pressable>
     </View>
   )
