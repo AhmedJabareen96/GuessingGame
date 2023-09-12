@@ -14,7 +14,8 @@ function Title({ children }) {
 const styles = StyleSheet.create({
   title: {
     fontFamily: 'open-sans-bold',
-    margin: 15,
+    marginTop: 15,
+    marginHorizontal: 15,
     fontSize: 24,
     // fontWeight: 'bold',
     color: 'white',
